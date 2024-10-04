@@ -1,0 +1,30 @@
+<html lang="en" layout:decorate="layout/main.html" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<div class="container" layout:fragment="fragment">
+	<div class="row alert alert-danger" th:if="${param.userExist}">
+		Email has already existed
+	</div>
+
+	<div class="row alert alert-warning" th:if="${param.passwordsNotMatch}">
+		Passwords not match
+	</div>
+
+
+	<form method="post" th:action="@{'/car/register'}">
+		<input class="form-control" name="full-name" placeholder="Full Name" type="text">
+		<br>
+		<input class="form-control" name="email" placeholder="Email" type="email">
+		<br>
+		<input class="form-control" name="password" placeholder="Password" type="password">
+		<br>
+		<input class="form-control" name="re-password" placeholder="Retype Password" type="password">
+
+		<div style="text-align: center; margin-top: 15px">
+			<button class="nav-link text-light bg-secondary mt-2"
+			        style="border-radius: 7px; width: 90px">Register
+			</button>
+		</div>
+	</form>
+</div>
+
+</html>

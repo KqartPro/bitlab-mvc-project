@@ -1,0 +1,19 @@
+<html lang="en" layout:decorate="layout/main.html" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div class="container" layout:fragment="fragment">
+	<form method="post" th:action="@{'/login'}">
+		<div class="row alert alert-danger" th:if="${param.error}">
+			Incorrect login or Password
+		</div>
+
+		<input class="form-control" name="user-email" placeholder="Email" type="email">
+		<br>
+		<input class="form-control" name="user-password" placeholder="Password" type="password">
+
+		<div style="text-align: center; margin-top: 15px">
+			<button class="nav-link text-light bg-secondary mt-2"
+			        style="border-radius: 7px; width: 90px">Login
+			</button>
+		</div>
+	</form>
+</div>
+</html>
